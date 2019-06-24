@@ -3,27 +3,45 @@ import React, { Component } from 'react';
 export default class WigBoard extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      addRow: False
+    }
   }
 
   componentDidMount() {}
 
+  renderNewRow() {
+    return (
+      <tr>
+        <td>{/* Render Dropdown with user categories */}</td>
+        <td>{/* Ability to fill in input */}</td>
+        <td>{/* Ability to fill in input */}</td>
+      </tr>
+    );
+  }
+
   render() {
     //render two tables one for previous week and one for this week
     return (
-      <table>
-        <thead>
-          <tr>
-            <td>Category</td>
-            <td>Goals</td>
-            <td>Status</td>
-            <td>Problems/Comments</td>
-          </tr>
-        </thead>
-        <tbody>
-          //loop rows with add button
-          <tr></tr>
-        </tbody>
-      </table>
+      <React.Fragment>
+        <PreviousWig></PreviousWig>
+        <NewCommitments></NewCommitments>
+        <table>
+          <thead>
+            <tr>
+              <td>Category</td>
+              <td>Goals</td>
+              <td>Status</td>
+              <td>Problems/Comments</td>
+            </tr>
+          </thead>
+          <tbody>
+            //loop rows with add button
+            { this.state.addRow ? this.renderNewRow() : null }
+          </tbody>
+        </table>
+      </React.Fragment>
     )
   }
 }
