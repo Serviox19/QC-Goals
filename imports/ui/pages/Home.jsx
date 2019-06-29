@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Header } from '../components/Header';
+import { Row, Col } from 'antd';
+import { Header } from '../components/Header/Header';
 import UsersList from '../components/UsersList';
 
 export default class Home extends Component {
@@ -11,10 +12,15 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div id="main-wrapper">
-        <Header />
-        <UsersList />
-      </div>
+      <Row>
+        <Col span={14} offset={5}>
+          <div id="main-wrapper">
+            <Header />
+            <UsersList />
+          </div>
+        </Col>
+      </Row>
+
     );
   }
 }

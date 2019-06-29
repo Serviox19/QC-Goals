@@ -32,7 +32,7 @@ export default class UsersList extends Component {
                     style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
                     {item.name.charAt(0)}
                   </Avatar>}
-                title={<a href="#">{item.name}</a>}
+                title={item.name}
                 description={item.title}
               />
             </List.Item>
