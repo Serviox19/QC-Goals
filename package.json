@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
+    "antd": "^3.19.8",
+    "indexof": "0.0.1",
     "meteor-node-stubs": "^0.4.1",
     "styled-components": "^4.3.2"
   },

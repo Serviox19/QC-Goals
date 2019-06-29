@@ -38,8 +38,9 @@ export default class WigBoard extends Component {
           </thead>
           <tbody>
             //loop rows with add button
-            { this.state.addRow ? this.renderNewRow() : null }
+            { this.renderNewRow() }
           </tbody>
+          <button onClick={this.renderNewRow()}>Add Row</button>
         </table>
       </React.Fragment>
     )
