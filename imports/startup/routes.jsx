@@ -5,7 +5,7 @@ import { mount } from 'react-mounter';
 import { App } from '../ui/layouts/App';
 import Home from '../ui/pages/Home';
 import WigPage from '../ui/pages/WigPage';
-import UserEditPage from '../ui/pages/UserEdit';
+import UserEditPage from '../ui/pages/UserEditPage';
 
 FlowRouter.route('/', {
   action() {
