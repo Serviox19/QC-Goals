@@ -30,7 +30,9 @@ class UsersList extends Component {
               <List.Item.Meta
                 avatar={
                   <Avatar
-                    style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                    style={{
+                      color: item.avatar_fontColor || '#f56a00',
+                      backgroundColor: item.avatar_bgColor || '#fde3cf' }}>
                     {item.name.charAt(0)}
                   </Avatar>}
                 title={item.name}
