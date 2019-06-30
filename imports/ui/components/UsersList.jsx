@@ -7,12 +7,14 @@ import { Users } from '../../collections/users';
 class UsersList extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props);
   }
 
   componentDidMount() {
+    console.log(this.props);
+  }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   render() {
@@ -43,7 +45,7 @@ class UsersList extends Component {
 
 }
 
-export default withTracker(() => {
+export default withTracker((props) => {
   Meteor.subscribe('users');
   return {
     users: Users.find({}).fetch()

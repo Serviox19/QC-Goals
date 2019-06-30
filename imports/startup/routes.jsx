@@ -15,18 +15,18 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/user/:userId', {
+FlowRouter.route('/user/:id', {
   action(params) {
     mount(App, {
-      content: <UserEditPage userId={params.userId} />
+      content: <UserEditPage userId={params.id} />
     })
   }
 })
 
-FlowRouter.route('/wigs/:userId', {
+FlowRouter.route('/wigs/:id', {
   action(params) {
     mount(App, {
-      content: <WigPage userId={params.userId} />
+      content: <WigPage userId={params.id} />
     })
   }
 })
