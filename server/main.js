@@ -7,7 +7,7 @@ import { Users } from '../imports/collections/users';
 Meteor.startup(() => {
   // code to run on server at startup
 
-  Meteor.publish('users', function (id) {
+  Meteor.publish('users', function() {
     return Users.find({});
   });
 });

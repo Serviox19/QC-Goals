@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import { List, Avatar, Button, Skeleton } from 'antd';
+import { withTracker } from 'meteor/react-meteor-data';
 
-export default class UsersList extends Component {
+import { Users } from '../../collections/users';
+
+class UsersList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    console.log(props);
   }
 
-  users() {
-    return [
-      {"id": 1, "name": "Servio", "title": "Web Developer", "avatar_color": ""},
-      {"id": 2, "name": "Katia", "title": "Copywriting Strategist", "avatar_color": ""},
-      {"id": 3, "name": "Naiomy", "title": "Graphic Designer", "avatar_color": ""},
-      {"id": 4, "name": "Joe", "title": "Copywriter", "avatar_color": ""}
-    ]
-  }
+  componentDidMount() {
 
-  componentDidMount() {}
+  }
 
   render() {
     return (
@@ -23,9 +21,10 @@ export default class UsersList extends Component {
         <List
           className="demo-loadmore-list"
           itemLayout="horizontal"
-          dataSource={this.users()}
+          dataSource={this.props.users}
           renderItem={item => (
-            <List.Item actions={[<a href="#">Edit</a>, <a href="#">Wigs</a>]} key={item.id}>
+            <List.Item
+              actions={[<a href={"/user/" + item._id}>Edit</a>, <a href={"/wigs/" + item._id}>Wigs</a>]} key={item._id}>
               <List.Item.Meta
                 avatar={
                   <Avatar
@@ -43,3 +42,10 @@ export default class UsersList extends Component {
   }
 
 }
+
+export default withTracker(() => {
+  Meteor.subscribe('users');
+  return {
+    users: Users.find({}).fetch()
+  }
+})(UsersList);

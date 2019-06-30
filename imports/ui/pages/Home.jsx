@@ -13,9 +13,14 @@ export default class Home extends Component {
   render() {
     return (
       <Row>
-        <Col span={14} offset={5}>
+        <Col
+          xs={{ span: 22, offset: 1 }}
+          sm={{ span: 22, offset: 1 }}
+          md={{ span: 20, offset: 2 }}
+          lg={{ span: 14, offset: 5 }}>
           <div id="main-wrapper">
             <Header />
+            <h1 style={{ textAlign: 'center' }}>Wildly Important Goals</h1>
             <UsersList />
           </div>
         </Col>
