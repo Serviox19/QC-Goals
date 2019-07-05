@@ -11,6 +11,6 @@ Meteor.startup(() => {
     return Users.find({});
   });
 
-  // MONGO_URL="mongodb://servioDev:ServioDev19!@ds345597.mlab.com:45597/qc-goals-test"
+  MONGO_URL="mongodb://servioDev:ServioDev19!@ds345597.mlab.com:45597/qc-goals-test meteor"
 
 });

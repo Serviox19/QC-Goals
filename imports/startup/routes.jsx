@@ -19,7 +19,7 @@ FlowRouter.route('/user/:id', {
   action(params) {
     mount(App, {
       content: <UserEditPage userId={params.id} />
-    })
+    });
   }
 })
 
@@ -27,9 +27,9 @@ FlowRouter.route('/wigs/:id', {
   action(params) {
     mount(App, {
       content: <WigPage userId={params.id} />
-    })
+    });
   }
-})
+});
 
 FlowRouter.route('/admin', {
   action() {

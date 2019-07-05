@@ -5,7 +5,7 @@ export default class WigBoard extends Component {
     super(props);
 
     this.state = {
-      addRow: False
+      addRow: false
     }
   }
 
